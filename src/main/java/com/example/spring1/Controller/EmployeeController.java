@@ -28,9 +28,17 @@ public class EmployeeController {
     public List<Employee> getAllEmployees(){
         return employeeService.getAllEmployees();
     }
+    //Get Employee Details By Id Rest API
     @GetMapping("{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") long employeeId){
         return  new ResponseEntity<Employee>(employeeService.getEmployeeById(employeeId),HttpStatus.OK);
 
     }
+    //Update Employee Rest Api
+    @PutMapping("{id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable("id") long id, Employee employee){
+        return new ResponseEntity<Employee>(employeeService.updateEmployee(employee, id),HttpStatus.OK);
+    }
+
+    //Build Delete Employee Rest API
 }
