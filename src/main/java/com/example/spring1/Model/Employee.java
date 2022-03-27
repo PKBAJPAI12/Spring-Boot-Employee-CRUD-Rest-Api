@@ -1,4 +1,4 @@
-package Model;
+package com.example.spring1.Model;
 
 import lombok.Data;
 
